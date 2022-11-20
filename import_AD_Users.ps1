@@ -1,8 +1,11 @@
-Import-Module ActiveDirectory
-$Domain="@abc.com"
-$UserOu="OU=Users,DC=abc,DC=com" $NewUsersList=Import-CSV "D:\students.csv"
-ForEach ($User in $NewUsersList)
-{
-$givenName=$User.givenName $sAMAccountName=$User.sAMAccountName $userPrincipalName=$User.sAMAccountName+$Domain $userPassword=$User.Password $expire=$null
-New-ADUser -Name $givenName -GivenName $givenName -SamAccountName $sAMAccountName
-}
+Import-Module ActiveDirectory # imports module
+$ADUsers = Import-Csv C:\students.csv 
+foreach ($User in $ADUsers) {
+    $username = $User.username
+    $password = $User.passcode
+    New-ADUser -Name $username -AccountPassword (ConvertTo-secureString $password -AsPlainText -Force) -ChangePasswordAtLogon $True
+    
+    
+    
+    
+    }
