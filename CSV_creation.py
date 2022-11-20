@@ -1,7 +1,9 @@
+# Zakaria Ahmed
+import pandas as pd
 import csv
 
 def header():
-    headerList = ['firstname', 'lastname', 'office', 'phone','title','accountname']
+    headerList = ['firstname', 'lastname', 'username', 'email','StreetAddress','City','ZipCode','State','Country']
 
     # open CSV file and assign header
     with open("students.csv", 'w') as file:
