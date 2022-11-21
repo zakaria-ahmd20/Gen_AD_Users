@@ -15,7 +15,7 @@ def header():
 def add_user():
     infile = open("students.csv", "a")
     username = str((input('enter your username:')))
-    passcode = "Adidas123_"
+    passcode = "Nike123_"
 
 
     data1 = f"\n{username},{passcode}"
