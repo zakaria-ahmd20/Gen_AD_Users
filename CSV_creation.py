@@ -21,13 +21,21 @@ def add_user():
     infile.write(data +"\n") # appends to new line
     print('record added succesfully !')
     infile.close()
+   
+def gen_user():
+    p = subprocess.Popen(["powershell.exe",
+                          "C:\\Users\\Administrator\\Desktop\\AD_Users.ps1"],
+                         stdout=sys.stdout)
+    p.communicate()
+    
 def main():
     print('Welcome to CSV creation')
     print('********************************************************'
         ' **  \n'
         ' **	Please choose one of the options below:\n'
         ' **	[a] to add new student record\n'
-        ' **	[h] to initialze headers\n'  
+        ' **	[h] to initialze headers\n'
+        ' **	[G] to generate users \n'  
         ' **	[q] to quit \n'
         ' ********************************************************\n')
     choice = input('pick:')
@@ -38,6 +46,9 @@ def main():
         elif choice == "h":
             header()
             break
+        elif choice == "G":
+            gen_user()
+            break    
         elif  choice == "q":
             break
 
