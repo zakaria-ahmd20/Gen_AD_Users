@@ -5,12 +5,12 @@ def header():
     headerList = ['Name','username','passcode','Title',]
 
     # open CSV file and assign header
-    with open("students.csv", 'w',newline='') as file:
+    with open("users.csv", 'w',newline='') as file:
         dd = csv.DictWriter(file, delimiter=',',
                             fieldnames=headerList)
         dd.writeheader()
 def add_user():
-    infile = open("students.csv", "a")
+    infile = open("users.csv", "a")
     Name = str((input('enter your full name:')))
     username = str((input('enter your username:')))
     passcode = pwgenerator.generate()
@@ -29,11 +29,11 @@ def gen_user():
     p.communicate()
     
 def main():
-    print('Welcome to CSV creation')
+    print('Welcome to AD_USERS creation')
     print('********************************************************'
         ' **  \n'
         ' **	Please choose one of the options below:\n'
-        ' **	[a] to add new student record\n'
+        ' **	[a] to add new AD user record\n'
         ' **	[h] to initialze headers\n'
         ' **	[G] to generate users \n'  
         ' **	[q] to quit \n'
