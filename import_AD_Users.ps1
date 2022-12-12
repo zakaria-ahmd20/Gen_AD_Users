@@ -1,5 +1,5 @@
 Import-Module ActiveDirectory
-$ADUsers = Import-Csv C:\students.csv
+$ADUsers = Import-Csv C:\users.csv
 foreach ($User in $ADUsers) {
     $Name = $User.Name
     $username = $User.username
