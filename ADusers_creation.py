@@ -1,5 +1,5 @@
 # Zakaria Ahmed
-from passwordgenerator import pwgenerator
+from password_generator import password_generator
 import csv
 import subprocess, sys
 
@@ -15,7 +15,7 @@ def add_user():
     infile = open("users.csv", "a")
     Name = str((input('enter your full name:')))
     username = str((input('enter your username:')))
-    passcode = pwgenerator.generate()
+    passcode = password_generator()
     Title = str((input('enter your job title:')))
 
     data1 = f"\n{username},{passcode},{Name},{Title}"
