@@ -31,9 +31,9 @@ def password_generator():
     pass_3 = f"{random_character}{random_word}{random_word_1}{random_character_1}{random_character_2}{random_word_2}{random_numbers}"
     password_decider = (random.randint(1,4))
     if password_decider == 1:
-        print(pass_1)
+        return pass_1
     elif password_decider == 2:
-        print(pass_2)
+        return pass_2
     elif password_decider == 3:
-        print(pass_3)
+        return pass_3
 password_generator()
