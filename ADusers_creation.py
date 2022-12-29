@@ -26,7 +26,7 @@ def add_user():
    
 def gen_user():
     p = subprocess.Popen(["powershell.exe",
-                          "C:\\Users\\Administrator\\Desktop\\AD_Users.ps1"],
+                          "C:\\Users\\Administrator\\Desktop\\import_AD_Users.ps1"],
                          stdout=sys.stdout)
     p.communicate()
     
