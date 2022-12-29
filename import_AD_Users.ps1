@@ -5,6 +5,6 @@ foreach ($User in $ADUsers) {
     $username = $User.username
     $password = $User.passcode
     $Title=$User.Title
-    New-ADUser -Name $Name -SamAccountName $username -AccountPassword (ConvertTo-secureString $password -AsPlainText -Force) -Title $Title
+    New-ADUser -Name $Name -SamAccountName $username -AccountPassword (ConvertTo-secureString $password -AsPlainText -Force) -Title $Title -ChangePasswordAtLogon $true
     Enable-AdAccount -Identity $username
     }
