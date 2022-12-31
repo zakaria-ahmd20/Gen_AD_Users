@@ -12,7 +12,7 @@ def email_credentials():
       passcode = (row[2])
       email_reciever = (row[4])
       email_password = os.environ.get('EMAIL_PASSWORD')
-      email_sender = 'hawkmoonsquad@gmail.com'
+      email_sender = 'youremail@gmail.com'
       subject = f"{username}'s crediantls"
       body = f" Hi here is the credentails for your new onboarding username is {username},password is {passcode}" \
              f"User will have to change their passcode on the next login" \
