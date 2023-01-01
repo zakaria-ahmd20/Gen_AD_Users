@@ -1,4 +1,5 @@
 - Create Active Directory Users with Strong Passcodes based off user input by utilizing Powershell and Python😎.
 - Run This script on a machine which has privileges to create active directory users 🔐
 - Ensure all the files are downloaded and refrenced with the proper file paths within your code 📚.
-- The script is in progress ⏭ .....................
+- User Must Change Passcode on Next Logon.
+- The script is in progress ⏭ for  security , logging , features , error handling etc . .....................
