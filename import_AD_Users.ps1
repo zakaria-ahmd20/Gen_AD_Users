@@ -1,5 +1,5 @@
 Import-Module ActiveDirectory
-$Log_File = "C:\PS\Logs\$env:UserName_ad_script.log"
+$Log_File = C:\PS\Logs\$env:UserName_ad_script.log
 if (Test-Path $Log_File) {
     echo "logging to $Log_File"
 }
@@ -16,8 +16,12 @@ foreach ($User in $ADUsers) {
     $password = $User.passcode
     $Title = $User.Title
     $Manager_Email = $User.Manager_Email
-    New-ADUser -Name $Name -SamAccountName $username -AccountPassword (ConvertTo-secureString $password -AsPlainText -Force) -Title $Title 
+    $AdUser_exists = Get-ADUser -Identity $username
+
+    if ($AdUser_exists -eq null) {New-ADUser -Name $Name -SamAccountName $username -AccountPassword (ConvertTo-secureString $password -AsPlainText -Force) -Title $Title }
+    else {echo "user already exists"}
+    
+    
     Enable-AdAccount -Identity $username
     Set-ADUser -Identity $username -ChangePasswordAtLogon $true
     }
-Stop-Transcript
