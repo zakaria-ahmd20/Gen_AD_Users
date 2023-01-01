@@ -1,4 +1,6 @@
 Import-Module ActiveDirectory
+$Log_File = C:\PS\Logs\$env:UserName_ad_script.log
+Start-Transcript -path $Log_File -append
 $ADUsers = Import-Csv C:\users.csv # or path of pyhton code
 foreach ($User in $ADUsers) {
     $FirstName = $User.FirstName
@@ -11,3 +13,4 @@ foreach ($User in $ADUsers) {
     Enable-AdAccount -Identity $username
     Set-ADUser -Identity $username -ChangePasswordAtLogon $true
     }
+Stop-Transcript
