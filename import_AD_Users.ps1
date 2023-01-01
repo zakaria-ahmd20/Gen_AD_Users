@@ -1,5 +1,6 @@
 Import-Module ActiveDirectory
 $Log_File = C:\PS\Logs\$env:UserName_ad_script.log
+Start-Transcript -path $Log_File -append
 if (Test-Path $Log_File) {
     echo "logging to $Log_File"
 }
@@ -7,7 +8,6 @@ else {
     New-Item $Log_File -ItemType Directory
     echo "Log file created ....."
 }
-Start-Transcript -path $Log_File -append
 $ADUsers = Import-Csv C:\users.csv # or path of pyhton code
 foreach ($User in $ADUsers) {
     $FirstName = $User.FirstName
