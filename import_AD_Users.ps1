@@ -1,5 +1,5 @@
 Import-Module ActiveDirectory
-$Log_File = C:\PS\Logs\$env:UserName_ad_script.log
+$Log_File = "C:\PS\Logs\$env:UserName_ad_script.log"
 if (Test-Path $Log_File) {
     echo "logging to $Log_File"
 }
